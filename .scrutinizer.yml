@@ -1,0 +1,61 @@
+#before_commands:
+#    - "composer install --prefer-dist"
+tools:
+    php_analyzer:
+        enabled: true
+        filter:
+            excluded_paths:
+                - vendor
+                - web
+                - app/cache
+        config:
+            checkstyle:
+                enabled: true
+            verify_php_doc_comments:
+                enabled: true
+            loops_must_use_braces:
+                enabled: true
+    php_code_coverage:
+        enabled: false
+        test_command: phpunit -c app/phpunit.xml.dist
+        filter:
+            excluded_paths:
+                - vendor
+                - web
+                - app
+                - bin
+    php_code_sniffer:
+        enabled: true
+        config:
+            standard: PSR2
+        filter:
+            excluded_paths:
+                - vendor
+                - web
+                - app
+                - bin
+    php_cpd:
+        enabled: true
+        excluded_dirs:
+            - vendor
+            - web
+            - app
+            - bin
+    php_loc:
+        enabled: true
+        excluded_dirs:
+            - vendor
+            - web
+            - app
+            - bin
+    php_mess_detector:
+        enabled: true
+        filter:
+            excluded_paths:
+                - vendor
+                - web
+                - app
+                - bin
+    php_pdepend:
+        enabled: true
+    sensiolabs_security_checker: false

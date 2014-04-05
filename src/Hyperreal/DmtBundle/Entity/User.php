@@ -29,7 +29,7 @@ class User extends AbstractUser
     /**
      * @ORM\Column(name="talk_id", type="integer", unique=true)
      */
-    private $talkId;
+    private $talkId = 14430;
 
     /**
      * @ORM\OneToMany(targetEntity="Order", mappedBy="user")
