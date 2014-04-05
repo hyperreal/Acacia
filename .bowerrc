@@ -1,0 +1,5 @@
+{
+    "directory" : "web/components",
+    "json" : "bower.json",
+    "endpoint"  : "https://bower.io"
+}

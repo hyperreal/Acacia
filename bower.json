@@ -1,0 +1,15 @@
+{
+    "name": "acidadserver",
+    "main": "web/css/main.css",
+    "version": "1.0.0",
+    "dependencies": {
+        "ckeditor-colorbutton": "http://download.ckeditor.com/colorbutton/releases/colorbutton_4.0.1.zip",
+        "ckeditor-panelbutton": "http://download.ckeditor.com/panelbutton/releases/panelbutton_4.0.1.zip",
+        "jquery": "1.10.2",
+        "bootstrap": "3.*",
+        "bootstrap-datepicker": "*",
+        "font-awesome": "*",
+        "icomoon": "*",
+        "ionicons": "*"
+    }
+}

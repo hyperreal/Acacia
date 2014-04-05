@@ -11,4 +11,10 @@
 /composer.phar
 /.idea/
 /*.iml
+/*.ipr
+/*.iws
+/*.swp
+web/components/*
+node_modules/
+!web/components/.gitkeep
 
