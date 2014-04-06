@@ -1,0 +1,94 @@
+@icon-font-path:          "/fonts/";
+
+body {
+  padding: 60px 0 20px 0;
+}
+
+ul.nav {
+  padding-right: 15px;
+}
+
+ul.no-buttons {
+  list-style-type: none;
+}
+
+menu, ul.no-buttons {
+  margin: 0;
+  padding: 0;
+}
+
+form {
+  label {
+    float: left;
+    width: 150px;
+    text-align: right;
+    padding: 7px 5px 0 0;
+  }
+  div.with-file > div > div:nth-child(2) {
+    margin-top: 8px;
+  }
+
+}
+
+.spanned-column {
+  background: #d5edf8;
+}
+
+form div > ul {
+  list-style: none;
+  float: right;
+}
+
+#tutorial {
+  p, ul {
+    font-family: 'Headland One', serif;
+  }
+}
+
+.no-payment-possible {
+  margin: 0;
+  padding: 0;
+}
+
+#tutorial tbody tr:nth-child(2n) td, .cke_dialog_contents tbody tr:nth-child(2n) td {
+  background: #fff;
+}
+
+table label.table {
+  float: none;
+  margin-left: 9px;
+  font-weight: normal;
+  padding: 0;
+}
+
+#annoucement_full_type {
+  > div {
+    clear: both;
+    padding: 5px 0;
+  }
+}
+
+#hyper_payment_form {
+
+  .input-group > .col-lg-3 {
+    padding: 0;
+    &:first-child {
+      padding-left: 15px;
+    }
+    &:last-child {
+      padding-right: 15px;
+    }
+  }
+
+  select.form-control {
+    float: left;
+  }
+}
+
+.cke {
+  clear: both;
+}
+
+.payment-info {
+  margin-top: 15px;
+}

@@ -28,6 +28,8 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    globals:
+        page_title: %acacia_default_page_title%
 
 # Assetic Configuration
 assetic:
@@ -71,4 +73,9 @@ swiftmailer:
 fos_user:
     db_driver: orm
     firewall_name: main
-    user_class: Hyperreal\DmtBundle\Entity\User
+    user_class: Hyperreal\AcaciaBundle\Entity\User
+
+
+hyperreal_acacia:
+    listing:
+        per_page: 40

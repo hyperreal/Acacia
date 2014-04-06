@@ -1,5 +1,5 @@
 {
-    "name": "acidadserver",
+    "name": "acacia",
     "main": "web/css/main.css",
     "version": "1.0.0",
     "dependencies": {

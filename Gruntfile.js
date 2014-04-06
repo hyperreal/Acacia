@@ -4,25 +4,25 @@ module.exports = function(grunt) {
         less: {
             development: {
                 options: {
-                    paths: ["src/Hyperreal/DmtBundle/Resources/public/css"]
+                    paths: ["src/Hyperreal/AcaciaBundle/Resources/public/css"]
                 },
                 files: {
-                    "src/Hyperreal/DmtBundle/Resources/public/css/main.css": "src/Hyperreal/DmtBundle/Resources/public/less/main.less"
+                    "src/Hyperreal/AcaciaBundle/Resources/public/css/main.css": "src/Hyperreal/AcaciaBundle/Resources/public/less/main.less"
                 }
             },
             production: {
                 options: {
-                    paths: ["src/Hyperreal/DmtBundle/Resources/public/css"],
+                    paths: ["src/Hyperreal/AcaciaBundle/Resources/public/css"],
                     cleancss: true
                 },
                 files: {
-                    "src/Hyperreal/DmtBundle/Resources/public/css/main.min.css": "src/Hyperreal/DmtBundle/Resources/public/less/main.less"
+                    "src/Hyperreal/AcaciaBundle/Resources/public/css/main.min.css": "src/Hyperreal/AcaciaBundle/Resources/public/less/main.less"
                 }
             }
         },
         watch: {
             scripts: {
-                files: ['src/Hyperreal/DmtBundle/Resources/public/less/*.less'],
+                files: ['src/Hyperreal/AcaciaBundle/Resources/public/less/*.less'],
                 tasks: ['less'],
                 options: {
                     nospawn: true

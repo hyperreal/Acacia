@@ -1,0 +1,135 @@
+/* (C) hyperreal.info 2014 */
+
+@icon-font-path:          "/components/bootstrap/fonts/";
+@fa-font-path:            "/components/font-awesome/fonts/";
+
+body {
+  padding: 60px 0 20px 0;
+}
+
+ul.nav {
+  padding-right: 15px;
+}
+
+li.nav-header {
+	padding-top:1px;
+	padding-bottom:5px;
+	padding-right:0px;
+	padding-left:0px;
+}
+
+.navbar {
+	zoom: 1;
+	filter: alpha(opacity=50);
+	opacity: 0.5;
+	background: green;
+	color: white;
+}
+
+html > body > nav.navbar.navbar-fixed-top > div.container > ul.nav.navbar-nav > li > a {
+	color: white;
+}
+
+html > body > nav.navbar.navbar-fixed-top > div.navbar-header > a.navbar-brand {
+	color: white;
+}
+
+a.fancybox img {
+	border: 5px solid transparent;
+}
+
+ul.no-buttons {
+  list-style-type: none;
+}
+
+menu, ul.no-buttons {
+  margin: 0;
+  padding: 0;
+}
+
+form {
+  label {
+    float: left;
+    width: 150px;
+    text-align: right;
+    padding: 7px 5px 0 0;
+  }
+  div.with-file > div > div:nth-child(2) {
+    margin-top: 8px;
+  }
+
+}
+
+.spanned-column {
+  background: #d5edf8;
+}
+
+form div > ul {
+  list-style: none;
+  float: right;
+}
+
+#tutorial {
+  p, ul {
+    font-family: 'Headland One', serif;
+  }
+}
+
+.no-payment-possible {
+  margin: 0;
+  padding: 0;
+}
+
+#tutorial tbody tr:nth-child(2n) td, .cke_dialog_contents tbody tr:nth-child(2n) td {
+  background: #fff;
+}
+
+table label.table {
+  float: none;
+  margin-left: 9px;
+  font-weight: normal;
+  padding: 0;
+}
+
+#annoucement_full_type {
+  > div {
+    clear: both;
+    padding: 5px 0;
+  }
+}
+
+#hyper_payment_form {
+
+  .input-group > .col-lg-3 {
+    padding: 0;
+    &:first-child {
+      padding-left: 15px;
+    }
+    &:last-child {
+      padding-right: 15px;
+    }
+  }
+
+  select.form-control {
+    float: left;
+  }
+}
+
+.cke {
+  clear: both;
+}
+
+.payment-info {
+  margin-top: 15px;
+}
+.panel-heading .accordion-toggle:after {
+    /* symbol for "opening" panels */
+	    font-family: 'Glyphicons Halflings';  /* essential for enabling glyphicon */
+	    content: "\e114";    /* adjust as needed, taken from bootstrap.css */
+	    float: right;        /* adjust as needed */
+	    color: grey;         /* adjust as needed */
+}
+.panel-heading .accordion-toggle.collapsed:after {
+    /* symbol for "collapsed" panels */
+	    content: "\e080";    /* adjust as needed, taken from bootstrap.css */
+}

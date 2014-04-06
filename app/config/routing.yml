@@ -1,4 +1,6 @@
-
+hyperreal_acacia:
+    resource: "@HyperrealAcaciaBundle/Resources/config/routing.xml"
+    prefix: /
 
 # FOSUserBundle
 fos_user_security:
