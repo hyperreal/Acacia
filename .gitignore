@@ -17,4 +17,4 @@
 web/components/*
 node_modules/
 !web/components/.gitkeep
-
+/.vagrant
