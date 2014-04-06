@@ -5,15 +5,15 @@ exec { "apt-update":
 $dependencies = [
   "php5",
   "php5-cli",
-  "php5-apc",
+  "php-apc",
   "php5-curl",
+  "php5-sqlite",
   "php5-mysql",
   "php5-intl",
   "php5-mcrypt",
   "git",
   "vim",
   "htop",
-  "sendmail"
 ]
 
 package { $dependencies:
@@ -29,33 +29,34 @@ file { "/var/www/acacia":
   recurse => true,
 }
 
-class { "apache": }
-class { "apache:mod:php": }
+class { "apache":
+  mpm_module => 'prefork'
+}
+
+class { "apache::mod::php": }
+
 apache::vhost { "acacia":
   priority => 000,
   port => 80,
   docroot => "/var/www/acacia/web",
   ssl => false,
-  servername => "app.local",
+  servername => "acacia.local",
   options => ["FollowSymlinks MultiViews"],
   override => ["All"],
   ensure => present,
   require => File['/var/www/acacia']
 }
 
-class { "mysql": }
-class { "mysql:php": }
-class { "mysql:server":
-  config_hash => {
-    "root_password" => "root"
-  }
+class { "::mysql::server":
+  root_password => "root",
 }
 
 mysql::db { "acacia":
+  ensure => present,
+  charset => 'utf8',
+  collate => 'utf8_polish_ci',
   user => "acacia",
   password => "acacia",
   host => 'localhost',
-  grant => ['all'],
-  require => Class['mysql:server'],
 }
 
