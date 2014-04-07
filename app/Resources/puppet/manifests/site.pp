@@ -29,8 +29,6 @@ file { "/var/www/acacia":
   recurse => true,
 }
 
-
-
 class { "::mysql::server":
   root_password => "root",
 }
