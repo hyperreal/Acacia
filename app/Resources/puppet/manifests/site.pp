@@ -29,23 +29,7 @@ file { "/var/www/acacia":
   recurse => true,
 }
 
-class { "apache":
-  mpm_module => 'prefork'
-}
 
-class { "apache::mod::php": }
-
-apache::vhost { "acacia":
-  priority => 000,
-  port => 80,
-  docroot => "/var/www/acacia/web",
-  ssl => false,
-  servername => "acacia.local",
-  options => ["FollowSymlinks MultiViews"],
-  override => ["All"],
-  ensure => present,
-  require => File['/var/www/acacia']
-}
 
 class { "::mysql::server":
   root_password => "root",
