@@ -125,6 +125,11 @@ exec { 'install_symfony_vendors':
   onlyif => 'test ! -f /var/www/acacia/vendor/autoload.php'
 }
 
+symfony_command { 'assets_install': 
+  command => 'assets:install --symlink --relative /var/www/acacia/web',
+  require => [ Js_deps['js_deps'], Exec['install_symfony_vendors'] ]
+}
+
 symfony_command { 'create_db':
   command => 'doctrine:schema:create',
   require => [ Exec['install_symfony_vendors'], Acacia_db['acacia_db'] ],
