@@ -57,7 +57,7 @@ define js_deps ($use_path) {
 
 ##########################################################################################################
 
-$acacia_path = '/bin:/usr/bin:/usr/local/bin:/usr/sbin:/usr/local/node/node-default'
+$acacia_path = '/bin:/usr/bin:/usr/local/bin:/usr/sbin:/usr/local/node/node-default/bin'
 
 exec { "apt-update":
   command => "/usr/bin/apt-get update",
