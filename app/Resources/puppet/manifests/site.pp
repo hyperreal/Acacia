@@ -47,7 +47,7 @@ define js_deps ($use_path) {
   }
 
   exec { 'install_bower_deps':
-    command => 'bower install -f',
+    command => 'bower install -f -q',
     path => $use_path,
     cwd => '/var/www/acacia',
     require => Package['bower'],

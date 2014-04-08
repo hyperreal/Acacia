@@ -1,9 +1,9 @@
-Hyperreal DMT
-=============
+Acacia
+======
 
-Hyperreal's announcements, dude.
+Announcements system
 
-## If you want to develop acacia
+## If you want to develop Acacia
 
  * `git clone https://github.com/hyperreal/Acacia.git`
  * Install [Vagrant][1], [VirtualBox][2] and its Guest Additions
