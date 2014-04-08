@@ -4,7 +4,7 @@ parameters:
     database_port:     ~
     database_name:     acacia
     database_user:     acacia
-    database_password: acacia123
+    database_password: acacia
 
     mailer_transport:  smtp
     mailer_host:       127.0.0.1
