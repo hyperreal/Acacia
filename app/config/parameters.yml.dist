@@ -15,3 +15,5 @@ parameters:
     secret:            ThisTokenIsNotSoSecretChangeIt
 
     acacia_default_page_title: Page title
+
+    password_encoder: sha512
