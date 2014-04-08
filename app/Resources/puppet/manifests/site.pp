@@ -104,7 +104,7 @@ class { 'apache':
 acacia_db { 'acacia_db': }
 
 exec { 'create_parameters_yml':
-  command => 'cp /var/www/acacia/app/config/parameters.yml.dist /var/www/app/config/parameters.yml',
+  command => 'cp /var/www/acacia/app/config/parameters.yml.dist /var/www/acacia/app/config/parameters.yml',
   path => $acacia_path,
   onlyif => 'test ! -f /var/www/acacia/app/config/parameters.yml'
 }
