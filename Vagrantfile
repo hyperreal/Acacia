@@ -10,7 +10,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = 'precise64'
   config.vm.network 'forwarded_port', guest: 80, host: 8080
   config.vm.network :private_network, ip: '192.168.33.10'
-  config.vm.synced_folder '.', '/var/www/acacia', :nfs =>  true
+
+  # you can force nfs, but I've disabled it  because on Mac it requires root privileges
+  config.vm.synced_folder '.', '/var/www/acacia', id: "vagrant-root", #, :nfs =>  true
+      owner: "vagrant",
+      group: "www-data",
+      mount_options: ["dmode=775,fmode=664"]
+
 
   config.vm.provider :virtualbox do |vb|
     vb.customize ['modifyvm', :id, '--memory', '1024']

@@ -21,12 +21,21 @@ package { $dependencies:
   require => Exec['apt-update']
 }
 
+file_line { 'acacia_local_host':
+  path => '/etc/hosts',
+  line => '127.0.0.1  acacia.local'
+}
+
 file { "/var/www/acacia":
   ensure => "directory",
   #owner => "www-data",
   #group => "www-data",
   #mode => "0775",
   recurse => true,
+}
+
+class { 'apache':
+  require => [ Exec['apt-update'], Package['php5'] ]
 }
 
 class { "::mysql::server":
@@ -42,3 +51,4 @@ mysql::db { "acacia":
   host => 'localhost',
 }
 
+class 
