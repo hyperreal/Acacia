@@ -138,7 +138,7 @@ symfony_command { 'assets_install':
 
 exec { 'run_chown':
   command => 'chown -R vagrant:www-data /var/www/acacia',
-  path => $use_path
+  path => $acacia_path
 }
 
 symfony_command { 'create_db':
