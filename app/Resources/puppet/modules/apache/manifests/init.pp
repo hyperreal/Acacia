@@ -23,4 +23,9 @@ class apache {
     notify => Service['apache2'],
     require => File['/etc/apache2/sites-available/acacia']
   }
+
+  exec { 'enable_rewrite':
+    command => '/usr/sbin/a2enmod rewrite',
+    notify => Service['apache2']
+  }
 }
