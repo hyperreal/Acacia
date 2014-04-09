@@ -52,11 +52,11 @@ define js_deps ($use_path) {
   }
 
   exec { 'install_bower_deps':
-    command => 'bower install -f -q',
-    environment => ["CI=true"],
+    command => 'bower install -f -q --allow-root',
+    environment => ["CI=true"], # dont ask for sending anon stats
     path => $use_path,
     cwd => '/var/www/acacia',
-    require => [ Package['bower'], File_line['ci_env'] ],
+    require => Package['bower'],
     creates => '/var/www/acacia/web/components/bootstrap/package.json'
   }
 }
@@ -99,10 +99,6 @@ file { "/var/www/acacia":
   recurse => true,
 }
 
-js_deps { 'js_deps': 
-  use_path => $acacia_path
-}
-
 class { 'apache':
   require => [ Exec['apt-update'], Package['php5'] ]
 }
@@ -129,11 +125,20 @@ exec { 'install_symfony_vendors':
   path => $acacia_path,
   require => Exec['install_composer'],
   onlyif => 'test ! -f /var/www/acacia/vendor/autoload.php'
-}
+} ->
+
+js_deps { 'js_deps': 
+  use_path => $acacia_path
+} ->
 
 symfony_command { 'assets_install': 
   command => 'assets:install --symlink --relative /var/www/acacia/web',
   require => [ Js_deps['js_deps'], Exec['install_symfony_vendors'] ]
+} ->
+
+exec { 'run_chown':
+  command => 'chown -R vagrant:www-data /var/www/acacia',
+  path => $use_path
 }
 
 symfony_command { 'create_db':

@@ -17,6 +17,16 @@ Announcements system
  * Check http://acacia.local/ in your browser :-) (admin credentials: username: `admin`, password: `acacia123`)
  * If you want to check logs or install additional packages, you can run `vagrant ssh` inside cloned repository.
 
+## How to... ?
+
+*Automatically compile less files*
+
+Log in into machine via ssh and:
+
+```
+cd /var/www/acacia && grunt watch
+```
+
 
 
 [1]: http://vagrantup.com/
