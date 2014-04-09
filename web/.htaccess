@@ -38,7 +38,11 @@ DirectoryIndex app.php
     RewriteRule .? - [L]
 
     # Rewrite all other queries to the front controller.
+    RewriteCond %{HTTP_HOST} ^acacia.local$
+    RewriteRule .? %{ENV:BASE}/app_dev.php [L,E=ACACIA_VAGRANT:vagrant]
+    
     RewriteRule .? %{ENV:BASE}/app.php [L]
+
 </IfModule>
 
 <IfModule !mod_rewrite.c>
