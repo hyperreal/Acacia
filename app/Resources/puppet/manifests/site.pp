@@ -32,6 +32,11 @@ define js_deps ($use_path) {
     make_install => false
   }
 
+  file_line {'ci_env': 
+  	path => '/etc/environment',
+  	line = 'CI=true'
+  }
+
   package { ['grunt-cli', 'bower']:
     provider => 'npm',
     ensure => present,
@@ -51,7 +56,7 @@ define js_deps ($use_path) {
     environment => ["CI=true"],
     path => $use_path,
     cwd => '/var/www/acacia',
-    require => Package['bower'],
+    require => [ Package['bower'], File_line['ci_env'] ]
     creates => '/var/www/acacia/web/components/bootstrap/package.json'
   }
 }

@@ -27,7 +27,7 @@ class User extends AbstractUser
     private $announcements;
 
     /**
-     * @ORM\Column(name="talk_id", type="integer", unique=true)
+     * @ORM\Column(name="talk_id", type="integer", nullable=true)
      */
     private $talkId;
 
