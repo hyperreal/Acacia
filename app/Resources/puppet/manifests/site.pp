@@ -56,7 +56,7 @@ define js_deps ($use_path) {
     environment => ["CI=true"],
     path => $use_path,
     cwd => '/var/www/acacia',
-    require => [ Package['bower'], File_line['ci_env'] ]
+    require => [ Package['bower'], File_line['ci_env'] ],
     creates => '/var/www/acacia/web/components/bootstrap/package.json'
   }
 }
