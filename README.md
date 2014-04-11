@@ -1,7 +1,7 @@
 Acacia
 ======
 
-Announcements system
+Open classifieds system
 
 ## If you want to develop Acacia
 
