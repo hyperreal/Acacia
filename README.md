@@ -13,7 +13,7 @@ Announcements system
 192.168.33.10 acacia.local
 ```
  
- * Run `vagrant up` inside cloned repository
+ * Run `vagrant up` inside the cloned repository
  * Check http://acacia.local/ in your browser :-) (admin credentials: username: `admin`, password: `acacia123`)
  * If you want to check logs or install additional packages, you can run `vagrant ssh` inside cloned repository.
 
