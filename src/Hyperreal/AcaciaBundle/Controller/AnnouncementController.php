@@ -10,12 +10,12 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class AnnouncementController extends Controller
 {
     /**
-     * @Route("/", name="hyperreal_acacia_announcement_index")
+     * @Route("/", name="acacia_announcement_index")
      * @Method("GET")
      * @Template()
      */
     public function indexAction()
     {
-        $this->get('hyperreal_acacia.listing.facade')->getAnnouncementsForListing(1);
+        $this->get('acacia.listing.facade')->getAnnouncementsForListing(1);
     }
 }

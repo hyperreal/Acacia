@@ -1,4 +1,4 @@
-hyperreal_acacia:
+acacia:
     resource: "@HyperrealAcaciaBundle/Resources/config/routing.xml"
     prefix: /
 

@@ -76,6 +76,6 @@ fos_user:
     user_class: Hyperreal\AcaciaBundle\Entity\User
 
 
-hyperreal_acacia:
+acacia:
     listing:
         per_page: 40

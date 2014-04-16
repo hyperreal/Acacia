@@ -6,13 +6,15 @@ use Hyperreal\AcaciaBundle\Form\AddAnnouncementFormType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 
 class AnnouncementManagementController extends Controller
 {
     /**
-     * @Route("/", name="hyperreal_acacia_user_announcement_management_index")
+     * @Route("/", name="acacia_user_announcement_management_index")
      * @Method("GET")
+     * @Security("has_role('ROLE_USER')")
      * @Template()
      */
     public function indexAction()
@@ -30,11 +32,12 @@ class AnnouncementManagementController extends Controller
     }
 
     /**
-     * @Route("/add", name="hyperreal_acacia_user_announcement_management_new")
+     * @Route("/add", name="acacia_user_announcement_management_new")
      * @Method("GET")
+     * @Security("has_role('ROLE_USER')")
      * @Template()
      */
-    public function addAction()
+    public function newAction()
     {
         $form = $this->createForm(new AddAnnouncementFormType());
 

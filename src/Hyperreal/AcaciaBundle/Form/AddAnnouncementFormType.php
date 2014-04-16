@@ -19,6 +19,6 @@ class AddAnnouncementFormType extends AbstractType
 
     public function getName()
     {
-        return 'hyperreal_acacia_user_add_announcement';
+        return 'acacia_user_add_announcement';
     }
 }

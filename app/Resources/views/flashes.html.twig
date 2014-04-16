@@ -1,4 +1,4 @@
-navbar.html.twig{% for error in app.session.flashbag.get('error') %}
+{% for error in app.session.flashbag.get('error') %}
 <div class="alert alert-error">
     {{ error }}
 </div>

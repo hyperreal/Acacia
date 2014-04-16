@@ -2,10 +2,11 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>{% block title %}Welcome!{% endblock %} - {{ page_title|babel }}</title>
+    <title>{% block title %}{{ 'meta.title.default'|babel }}{% endblock %} - {{ 'meta.title.suffix'|babel }}</title>
+    <meta name="description" content="{% block description %}{{ 'meta.description.default'|babel }}{% endblock %}" />
     {% block stylesheets %}{% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    <link href='http://fonts.googleapis.com/css?family=Headland+One&subset=latin-ext' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Headland+One&amp;subset=latin-ext' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="{{ asset('components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('components/jquery/jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('components/fancybox/source/jquery.fancybox.pack.js') }}"></script>
@@ -34,12 +35,11 @@
 </div>
 
 <hr />
-
 <div id="footer">
     <div class="container">
         <p class="muted credit">
-            <span class="glyphicon glyphicon-copyright-mark"></span> <a href="http://hyperreal.info/">hyperreal.info</a> 2012-{{ 'now'|date('Y') }} <br/>
-            {{ 'powered.by.acacia'|babel }} | <a href="https://github.com/hyperreal/Acacia" class="github-fork">{{ 'acacia.promo.github'|babel }}</a>
+            <span class="glyphicon glyphicon-copyright-mark"></span> <a href="http://hyperreal.info/">hyperreal.info</a> 2014{% if 'now'|date('Y') > 2014 %}-{{ 'now'|date('Y') }}{% endif %}<br/>
+            {{ 'promo.poweredby'|babel }} | <a href="https://github.com/hyperreal/Acacia" class="github-fork">{{ 'promo.github'|babel }}</a>
         </p>
     </div>
 </div>

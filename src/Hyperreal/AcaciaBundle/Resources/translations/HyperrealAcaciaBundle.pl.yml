@@ -1,0 +1,9 @@
+promo:
+    github: acacia.promo.github
+    poweredby: acacia.promo.poweredby
+meta:
+    title:
+        suffix: acacia.meta.title.suffix
+        default: acacia.meta.title.default
+    description:
+        default: acacia.meta.description.default

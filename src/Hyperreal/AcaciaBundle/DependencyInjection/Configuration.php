@@ -18,7 +18,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('hyperreal_acacia');
+        $rootNode = $treeBuilder->root('acacia');
 
         $rootNode
             ->children()

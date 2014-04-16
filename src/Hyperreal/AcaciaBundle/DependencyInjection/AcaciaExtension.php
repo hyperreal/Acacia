@@ -12,7 +12,7 @@ use Symfony\Component\DependencyInjection\Loader;
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
  */
-class HyperrealAcaciaExtension extends Extension
+class AcaciaExtension extends Extension
 {
     /**
      * {@inheritDoc}
@@ -23,10 +23,15 @@ class HyperrealAcaciaExtension extends Extension
         $config = $this->processConfiguration($configuration, $configs);
 
         if (isset($config['listing'])) {
-            $container->setParameter('hyperreal_acacia.listing.per_page', $config['listing']['per_page']);
+            $container->setParameter('acacia.listing.per_page', $config['listing']['per_page']);
         }
 
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.xml');
+    }
+
+    public function getAlias()
+    {
+        return 'acacia';
     }
 }
