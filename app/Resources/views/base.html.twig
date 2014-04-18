@@ -7,12 +7,10 @@
     {% block stylesheets %}{% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     <link href='http://fonts.googleapis.com/css?family=Headland+One&amp;subset=latin-ext' rel='stylesheet' type='text/css'>
-    <script type="text/javascript" src="{{ asset('components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('components/jquery/jquery.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('components/fancybox/source/jquery.fancybox.pack.js') }}"></script>
-    <link rel="stylesheet" href="{{ asset('components/fancybox/source/jquery.fancybox.css') }}" type="text/css" media="screen" />
+    {#<link rel="stylesheet" href="{{ asset('components/fancybox/source/jquery.fancybox.css') }}" type="text/css" media="screen" />#}
     <link rel="stylesheet" type="text/css" href="{{ asset('bundles/hyperrealacacia/css/main.min.css') }}" media="screen" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="hyperreal.info" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -37,14 +35,16 @@
 <hr />
 <div id="footer">
     <div class="container">
-        <p class="muted credit">
+        <p class="small text-muted">
             <span class="glyphicon glyphicon-copyright-mark"></span> <a href="http://hyperreal.info/">hyperreal.info</a> 2014{% if 'now'|date('Y') > 2014 %}-{{ 'now'|date('Y') }}{% endif %}<br/>
             {{ 'promo.poweredby'|babel }} | <a href="https://github.com/hyperreal/Acacia" class="github-fork">{{ 'promo.github'|babel }}</a>
         </p>
     </div>
 </div>
 
-{#<script type="text/javascript" src="{{ asset('components/bootstrap/dist/js/bootstrap.min.js') }}"></script>#}
+<script type="text/javascript" src="{{ asset('components/jquery/dist/jquery.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+{# <script type="text/javascript" src="{{ asset('components/fancybox/source/jquery.fancybox.pack.js') }}"></script> #}
 {% block javascripts %}{% endblock %}
 
 </body>
