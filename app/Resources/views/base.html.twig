@@ -5,6 +5,9 @@
     <title>{% block title %}{{ 'meta.title.default'|babel }}{% endblock %} - {{ 'meta.title.suffix'|babel }}</title>
     <meta name="description" content="{% block description %}{{ 'meta.description.default'|babel }}{% endblock %}" />
     {% block stylesheets %}{% endblock %}
+    {% stylesheets '@FOSCommentBundle/Resources/assets/css/comments.css' %}
+    <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+    {% endstylesheets %}
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     <link href='http://fonts.googleapis.com/css?family=Headland+One&amp;subset=latin-ext' rel='stylesheet' type='text/css'>
     {#<link rel="stylesheet" href="{{ asset('components/fancybox/source/jquery.fancybox.css') }}" type="text/css" media="screen" />#}

@@ -28,8 +28,8 @@ fos_comment:
     db_driver: orm
     class:
         model:
-            comment: MyProject\MyBundle\Entity\Comment
-            thread: MyProject\MyBundle\Entity\Thread
+            comment: Hyperreal\AcaciaBundle\Entity\Comment
+            thread: Hyperreal\AcaciaBundle\Entity\Thread
 
 # Twig Configuration
 twig:

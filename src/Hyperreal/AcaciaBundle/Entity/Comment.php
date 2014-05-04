@@ -9,6 +9,7 @@ use FOS\CommentBundle\Entity\Comment as BaseComment;
  * Announcement discussion entry
  *
  * @ORM\Entity()
+ * @ORM\Table(name="comments")
  * @ORM\ChangeTrackingPolicy("DEFERRED_EXPLICIT")
  */
 class Comment extends BaseComment

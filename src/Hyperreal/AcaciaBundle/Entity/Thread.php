@@ -9,6 +9,7 @@ use FOS\CommentBundle\Entity\Thread as BaseThread;
  * Announcement discussion container
  *
  * @ORM\Entity
+ * @ORM\Table(name="threads")
  * @ORM\ChangeTrackingPolicy("DEFERRED_EXPLICIT")
  */
 class Thread extends BaseThread
