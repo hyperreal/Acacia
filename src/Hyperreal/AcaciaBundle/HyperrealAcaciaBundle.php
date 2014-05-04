@@ -14,4 +14,8 @@ class HyperrealAcaciaBundle extends Bundle
         $container->registerExtension(new AcaciaExtension());
     }
 
+    public function getParent()
+    {
+        return 'FOSUserBundle';
+    }
 }
