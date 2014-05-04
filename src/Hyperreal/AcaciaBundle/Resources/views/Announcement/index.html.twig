@@ -2,7 +2,9 @@
 
 {% block body %}
 
-    Hello {{ name }}!
+    {{ announcement.title }}
+
+    {% include 'FOSCommentBundle:Thread:async.html.twig' with {'id': announcement.thread.id} %}
 
 {% endblock %}
 

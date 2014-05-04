@@ -18,7 +18,7 @@ class Announcement
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @ORM\ManyToOne(targetEntity="User", inversedBy="announcements")
@@ -73,27 +73,27 @@ class Announcement
     private $type;
 
     /**
-     *
-     * one to many with comment
+     * @var Thread
+     * @ORM\OneToOne(targetEntity = "Thread", mappedBy="announcement")
      */
-    private $comments;
+    private $thread;
 
     /**
      * one to many with payments
      */
     private $payments;
 
-    public function getComments()
+    /**
+     * @return Thread
+     */
+    public function getThread()
     {
-        return $this->comments;
+        return $this->thread;
     }
 
-    /**
-     * @param mixed $comments
-     */
-    public function setComments($comments)
+    public function setThread(Thread $thread)
     {
-        $this->comments = $comments;
+        $this->thread = $thread;
     }
 
     public function getContent()
