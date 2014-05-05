@@ -145,11 +145,6 @@ symfony_command { 'assets_install':
   require => [ Js_deps['js_deps'], Exec['install_symfony_vendors'] ]
 } ->
 
-exec { 'run_chown':
-  command => 'chown -R vagrant:www-data /var/www/acacia',
-  path => $acacia_path
-}
-
 symfony_command { 'create_db':
   command => 'doctrine:schema:create',
   require => [ Exec['install_symfony_vendors'], Acacia_db['acacia_db'] ],

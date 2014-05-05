@@ -11,7 +11,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network 'forwarded_port', guest: 80, host: 8080
   config.vm.network :private_network, ip: '192.168.33.10'
 
-  config.vm.synced_folder '.', '/var/www/acacia', id: "vagrant-root", type: "nfs", mount_options: ["rw"]
+  config.vm.synced_folder '.', '/var/www/acacia', id: "vagrant-root", type: "nfs"#, mount_options: ["rw"]
   # uncomment if you don't use NFS above
   #     owner: "vagrant",
   #     group: "www-data",
@@ -23,7 +23,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     vb.customize ['modifyvm', :id, '--memory', '1024']
   end
 
-  config.vm.provision :puppet do |puppet|
+  config.vm.provision :puppet, :facter => { "host_uid" => config.nfs.map_uid, "host_gid" => config.nfs.map_gid, } do |puppet|
     puppet.manifests_path = 'app/Resources/puppet/manifests'
     puppet.manifest_file  = 'site.pp'
     puppet.module_path    = 'app/Resources/puppet/modules'
