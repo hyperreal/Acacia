@@ -17,8 +17,7 @@ class AnnouncementController extends Controller
     public function indexAction()
     {
         return array(
-//            'announcement' => $this->get('acacia.listing.facade')->getAnnouncementsForListing(1)
-            'announcement' => $this->get('doctrine.orm.entity_manager')->getRepository('HyperrealAcaciaBundle:Announcement')->find(1),
+            'announcement' => $this->get('acacia.listing.facade')->getAnnouncement(1)
         );
     }
 }

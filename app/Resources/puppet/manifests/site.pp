@@ -1,5 +1,3 @@
-
-
 define acacia_db {
   class { "::mysql::server":
     root_password => "root",
@@ -12,9 +10,20 @@ define acacia_db {
     user => "acacia",
     password => "acacia",
     host => 'localhost'
-  }  
+  }
 }
 
+define helpers ($rootPassword = 'root') {
+  file { '/home/vagrant/.my.cnf':
+    ensure => present,
+    content => template('my.cnf.erb')
+  }
+
+  file { '/home/vagrant/.vimrc':
+    ensure => present,
+    content => template('vimrc.erb')
+  }
+}
 
 define symfony_command ($command, $onlyif = undef, $require = undef) {
   exec { $name:
@@ -152,3 +161,5 @@ symfony_command { 'install_admin_user':
   require => Symfony_command['create_db'],
   onlyif => "/usr/bin/mysql -u acacia -pacacia -e 'SELECT COUNT(*) FROM users' acacia | tail -n 1 | grep '^0$'"
 }
+
+helpers { 'helpers': }

@@ -17,16 +17,17 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #     group: "www-data",
   #     mount_options: ["dmode=775,fmode=664"]
 
+  config.vm.synced_folder "app/Resources/puppet/templates", "/tmp/vagrant-puppet/templates", id: "templates", type: "nfs"
 
   config.vm.provider :virtualbox do |vb|
     vb.customize ['modifyvm', :id, '--memory', '1024']
   end
 
   config.vm.provision :puppet do |puppet|
-    #puppet.options        = '--verbose --debug'
     puppet.manifests_path = 'app/Resources/puppet/manifests'
     puppet.manifest_file  = 'site.pp'
     puppet.module_path    = 'app/Resources/puppet/modules'
+    puppet.options = ["--templatedir", "/tmp/vagrant-puppet/templates"]
   end
 
 end

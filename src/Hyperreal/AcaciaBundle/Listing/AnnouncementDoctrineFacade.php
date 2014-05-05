@@ -9,12 +9,18 @@ class AnnouncementDoctrineFacade implements ListingFacade
 {
     /** @var \Doctrine\ORM\EntityManager */
     private $entityManager;
+
     private $announcementsPerPage;
 
     function __construct(EntityManager $entityManager, $announcementsPerPage)
     {
         $this->entityManager = $entityManager;
         $this->announcementsPerPage = $announcementsPerPage;
+    }
+
+    public function getAnnouncement($id)
+    {
+        return $this->entityManager->getRepository('HyperrealAcaciaBundle:Announcement')->find($id);
     }
 
     public function getAnnouncementsForListing($pageNum)
