@@ -36,4 +36,23 @@ class AppKernel extends Kernel
     {
         $loader->load(__DIR__.'/config/config_'.$this->getEnvironment().'.yml');
     }
+
+        public function getCacheDir()
+    {
+        if (in_array($this->getEnvironment(), array('dev', 'test'))) {
+            return '/tmp/acacia/cache/' . $this->environment;
+        }
+
+        return parent::getCacheDir();
+    }
+
+    public function getLogDir()
+    {
+        if (in_array($this->getEnvironment(), array('dev', 'test'))) {
+            return '/tmp/acacia/logs/';
+        }
+
+        return parent::getLogDir();
+    }
+
 }
