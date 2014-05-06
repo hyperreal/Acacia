@@ -21,7 +21,7 @@ Open classifieds system
 
 *Automatically compile less files*
 
-Log in into machine via ssh and:
+Log in into your vagrant virtual machine via `vagrant ssh` and:
 
 ```
 cd /var/www/acacia && grunt watch
