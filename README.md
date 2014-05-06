@@ -13,7 +13,7 @@ Open classifieds system
 192.168.33.10 acacia.local
 ```
  
- * Run `vagrant up` inside the cloned repository
+ * Run `vagrant up` inside the cloned repository. Please notice: you must have a good internet connection at this moment, as the vagrant environment buildup process requires downloading a lot of stuff. 
  * Check http://acacia.local/ in your browser :-) (admin credentials: username: `admin`, password: `acacia123`)
  * If you want to check logs or install additional packages, you can run `vagrant ssh` inside cloned repository.
 
@@ -21,7 +21,7 @@ Open classifieds system
 
 *Automatically compile less files*
 
-Log in into machine via ssh and:
+Log in into your vagrant virtual machine via `vagrant ssh` and:
 
 ```
 cd /var/www/acacia && grunt watch

@@ -1,0 +1,72 @@
+/*
+Rotating background images.
+*/
+
+@bgslide: "/bundles/hyperrealacacia/img/background-slide";
+
+  .background-carousel { z-index: -99; }
+      .background-carousel .bgc-item {
+        position: fixed; 
+        width: 100%; height: 100%;
+        -webkit-transition: opacity 1s;
+        -moz-transition: opacity 1s;
+        -ms-transition: opacity 1s;
+        -o-transition: opacity 1s;
+        transition: opacity 1s;
+
+      }
+      .background-carousel .bgc-one {
+        background: url("@{bgslide}-1.jpg");
+        background-size: cover;
+        -moz-background-size: cover;
+      }
+      .background-carousel .bgc-two {
+        background: url("@{bgslide}-2.jpg");
+        background-size: cover;
+        -moz-background-size: cover;
+      }
+      .background-carousel .bgc-three {
+        background: url("@{bgslide}-3.jpg");
+        background-size: cover;
+        -moz-background-size: cover;
+      }
+      .background-carousel .bgc-four {
+        background: url("@{bgslide}-4.jpg");
+        background-size: cover;
+        -moz-background-size: cover;
+      }
+      .background-carousel .bgc-five {
+        background: url("@{bgslide}-5.jpg");
+        background-size: cover;
+        -moz-background-size: cover;
+      }
+      .background-carousel .bgc-six {
+        background: url("@{bgslide}-6.jpg");
+        background-size: cover;
+        -moz-background-size: cover;
+      }
+      .background-carousel .bgc-seven {
+        background: url("@{bgslide}-7.jpg");
+        background-size: cover;
+        -moz-background-size: cover;
+      }
+      .background-carousel .bgc-eight {
+        background: url("@{bgslide}-8.jpg");
+        background-size: cover;
+        -moz-background-size: cover;
+      }
+      .background-carousel .bgc-nine {
+        background: url("@{bgslide}-9.jpg");
+        background-size: cover;
+        -moz-background-size: cover;
+      }
+      .background-carousel .bgc-ten {
+        background: url("@{bgslide}-10.jpg");
+        background-size: cover;
+        -moz-background-size: cover;
+      }
+      .background-carousel .bgc-active.left {
+        left:0;
+        opacity:0;
+        z-index:2;
+      }
