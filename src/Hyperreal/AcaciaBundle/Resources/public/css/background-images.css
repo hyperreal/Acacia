@@ -1,0 +1,69 @@
+/*
+Rotating background images.
+*/
+  .background-carousel { z-index: -99; }
+      .background-carousel .bgc-item {
+        position: fixed; 
+        width: 100%; height: 100%;
+        -webkit-transition: opacity 1s;
+        -moz-transition: opacity 1s;
+        -ms-transition: opacity 1s;
+        -o-transition: opacity 1s;
+        transition: opacity 1s;
+
+      }
+      .background-carousel .bgc-one {
+        background: url(assets/img/background-slide-1.png);
+        background-size: cover;
+        -moz-background-size: cover;
+      }
+      .background-carousel .bgc-two {
+        background: url(assets/img/background-slide-2.png);
+        background-size: cover;
+        -moz-background-size: cover;
+      }
+      .background-carousel .bgc-three {
+        background: url(assets/img/background-slide-3.png);
+        background-size: cover;
+        -moz-background-size: cover;
+      }
+      .background-carousel .bgc-four {
+        background: url(assets/img/background-slide-4.png);
+        background-size: cover;
+        -moz-background-size: cover;
+      }
+      .background-carousel .bgc-five {
+        background: url(assets/img/background-slide-5.png);
+        background-size: cover;
+        -moz-background-size: cover;
+      }
+      .background-carousel .bgc-six {
+        background: url(assets/img/background-slide-6.png);
+        background-size: cover;
+        -moz-background-size: cover;
+      }
+      .background-carousel .bgc-seven {
+        background: url(assets/img/background-slide-7.png);
+        background-size: cover;
+        -moz-background-size: cover;
+      }
+      .background-carousel .bgc-eight {
+        background: url(assets/img/background-slide-8.png);
+        background-size: cover;
+        -moz-background-size: cover;
+      }
+      .background-carousel .bgc-nine {
+        background: url(assets/img/background-slide-9.png);
+        background-size: cover;
+        -moz-background-size: cover;
+      }
+      .background-carousel .bgc-ten {
+        background: url(assets/img/background-slide-10.png);
+        background-size: cover;
+        -moz-background-size: cover;
+      }
+      .background-carousel .bgc-active.left {
+        left:0;
+        opacity:0;
+        z-index:2;
+      }
