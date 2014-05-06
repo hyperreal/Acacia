@@ -11,7 +11,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network 'forwarded_port', guest: 80, host: 8080
   config.vm.network :private_network, ip: '192.168.33.10'
 
-  config.vm.synced_folder '.', '/var/www/acacia', id: "vagrant-root", type: "nfs"#, mount_options: ["rw"]
+  config.vm.synced_folder '.', '/var/www/acacia', id: "vagrant-root", type: "nfs", mount_options: ["rw"]
   # uncomment if you don't use NFS above
   #     owner: "vagrant",
   #     group: "www-data",

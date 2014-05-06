@@ -53,7 +53,7 @@ define js_deps ($use_path) {
   }
 
   exec { 'install_npm_deps':
-    command => 'npm install',
+    command => 'su vagrant -c "/usr/local/node/node-default/bin/npm install"',
     path => $use_path,
     cwd => '/var/www/acacia',
     require => Class['nodejs'],
