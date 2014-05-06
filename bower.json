@@ -8,6 +8,7 @@
         "bootstrap": "3.*",
         "bootstrap-datepicker": "*",
         "font-awesome": "*",
+	"impress.js": "*",
         "icomoon": "*",
         "ionicons": "*"
     }
