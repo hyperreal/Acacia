@@ -8,7 +8,7 @@ use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\Security\Core\SecurityContextInterface;
 
-class OwnerOnlyEventListener implements EventSubscriberInterface
+class OwnerOnlyEventSubscriber implements EventSubscriberInterface
 {
     /** @var \Symfony\Component\Security\Core\SecurityContextInterface */
     private $securityContext;

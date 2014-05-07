@@ -86,3 +86,4 @@ fos_user:
 acacia:
     listing:
         per_page: 40
+    route_map_file: app/config/route-map.yml

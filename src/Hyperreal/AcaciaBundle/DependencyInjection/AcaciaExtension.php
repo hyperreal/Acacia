@@ -26,6 +26,10 @@ class AcaciaExtension extends Extension
             $container->setParameter('acacia.listing.per_page', $config['listing']['per_page']);
         }
 
+        if (isset($config['route_map_file'])) {
+            $container->setParameter('acacia.route_map_file', $config['route_map_file']);
+        }
+
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.xml');
     }
