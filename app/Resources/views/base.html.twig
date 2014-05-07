@@ -12,7 +12,7 @@
     <link href='http://fonts.googleapis.com/css?family=Headland+One&amp;subset=latin-ext' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="{{ asset('components/jquery/dist/jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('components/impress.js/js/impress.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('bundles/hyperrealacacia/js/background-images.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/hyperrealacacia/js/background.js') }}"></script>
     {#<link rel="stylesheet" href="{{ asset('components/fancybox/source/jquery.fancybox.css') }}" type="text/css" media="screen" />#}
     <link rel="stylesheet" type="text/css" href="{{ asset('bundles/hyperrealacacia/css/main.min.css') }}" media="screen" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,6 +21,7 @@
 </head>
 <body>
 {% include "::navbar.html.twig" %}
+{% include "::background.html.twig" %}
 
 <div class="container">
     <div class="row">
@@ -40,7 +41,7 @@
 
 <hr />
 <div id="footer">
-    <div class="container">
+    <div class="container well well-large">
         <p class="small text-muted">
             <span class="glyphicon glyphicon-copyright-mark"></span> <a href="http://hyperreal.info/">hyperreal.info</a> 2014{% if 'now'|date('Y') > 2014 %}-{{ 'now'|date('Y') }}{% endif %}<br/>
             {{ 'promo.poweredby'|babel }} | <a href="https://github.com/hyperreal/Acacia" class="github-fork">{{ 'promo.github'|babel }}</a>
