@@ -1,4 +1,4 @@
 $('.carousel').carousel({
-       	interval: 19999 //changes the speed
+       	interval: 20000,
 	pause: "false"
 })
