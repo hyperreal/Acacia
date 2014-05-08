@@ -10,7 +10,7 @@
             </button>
 
             <a class="navbar-brand" href="{{ url('_welcome') }}">
-                <span class="glyphicon glyphicon-home"></span>
+		<span class="step size-18"><i class="icon ion-flask"></i></span>
                  {{ 'navbar.title'|babel }}
             </a>
         </div>
@@ -39,11 +39,13 @@
                             <span class="glyphicon glyphicon-log-in"></span>
                              {{ 'navbar.login'|babel }}</a>
                     </li>
+		<!-- Registration is not allowed for Hyperreal, but you can uncomment it here if you need built-in auth system
                     <li>
                         <a href="{{ path('fos_user_registration_register') }}">
                             <span class="glyphicon glyphicon-user"></span>
                              {{ 'navbar.register'|babel }}</a>
                     </li>
+		-->
                 {% endif %}
             </ul>
         </div>

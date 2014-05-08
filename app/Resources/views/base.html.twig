@@ -10,10 +10,8 @@
     {% endstylesheets %}
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     <link href='http://fonts.googleapis.com/css?family=Headland+One&amp;subset=latin-ext' rel='stylesheet' type='text/css'>
-    {#<script type="text/javascript" src="{{ asset('components/impress.js/js/impress.js') }}"></script>#}
-    <script type="text/javascript" src="{{ asset('bundles/hyperrealacacia/js/background.js') }}"></script>
-    {#<link rel="stylesheet" href="{{ asset('components/fancybox/source/jquery.fancybox.css') }}" type="text/css" media="screen" />#}
     <link rel="stylesheet" type="text/css" href="{{ asset('bundles/hyperrealacacia/css/main.min.css') }}" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('components/ionicons/css/ionicons.min.css') }}" media="screen" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="author" content="hyperreal.info" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,10 +19,8 @@
 <body>
 {% include "::navbar.html.twig" %}
 
-{% if is_granted("ROLE_USER") %}
-	{% include "::background.html.twig" %}
-{% endif %}
-
+{% if (is_granted('ROLE_USER') or app.request.get('_route') != '_welcome') %}
+{% include "::background.html.twig" %}
 <div class="container">
 	<div class="row">
 		{% if is_granted("ROLE_USER") %}
@@ -40,6 +36,9 @@
 		</div>
 	</div>
 </div>
+{% else %}
+	{% block unlogged_body %}{% endblock %}
+{% endif %}
 
 <hr />
 <div id="footer">
@@ -53,7 +52,6 @@
 
 <script type="text/javascript" src="{{ asset('components/jquery/dist/jquery.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
-{# <script type="text/javascript" src="{{ asset('components/fancybox/source/jquery.fancybox.pack.js') }}"></script> #}
 {% block javascripts %}{% endblock %}
 
 </body>
