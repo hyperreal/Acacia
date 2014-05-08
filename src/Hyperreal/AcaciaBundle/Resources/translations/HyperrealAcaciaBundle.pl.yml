@@ -1,14 +1,14 @@
 promo:
-    github: Stwórz forka na githubie!
-    poweredby: Strona wspierana przez Akację - serwer ogłoszeń hyperreala
+    github: Pomóż nam na githubie!
+    poweredby: "Strona wspierana przez Akację - serwer ogłoszeń drobnych [H]yperreala"
 meta:
     title:
-        suffix: Akacja
-        default: Ogłoszenia hyperreala
+        suffix: "Menu [H]yperreala"
+        default: Ogłoszenia drobne [H]yperreala
     description:
         default: Akacja - Ogłoszenia drobne serwisu hyperreal.info
 navbar:
-    title: Akacja
+    title: "Menu [H]yperreala"
     login: Zaloguj się
     logout: Wyloguj się
     edit-profile: Twój profil
