@@ -7349,73 +7349,14 @@ ul.no-buttons {
   /* adjust as needed, taken from bootstrap.css */
 }
 /*
-Rotating background images.
+Background image.
 */
-.background-carousel {
-  z-index: -99;
-}
-.background-carousel .bgc-item {
+.bg {
+  background: url("/bundles/hyperrealacacia/img/background-slide-2.jpg");
   position: fixed;
   width: 100%;
-  height: 100%;
-  -webkit-transition: opacity 1s;
-  -moz-transition: opacity 1s;
-  -ms-transition: opacity 1s;
-  -o-transition: opacity 1s;
-  transition: opacity 1s;
-}
-.background-carousel .bgc-one {
-  background: url("/bundles/hyperrealacacia/img/background-slide-1.jpg");
-  background-size: cover;
-  -moz-background-size: cover;
-}
-.background-carousel .bgc-two {
-  background: url("/bundles/hyperrealacacia/img/background-slide-2.jpg");
-  background-size: cover;
-  -moz-background-size: cover;
-}
-.background-carousel .bgc-three {
-  background: url("/bundles/hyperrealacacia/img/background-slide-3.jpg");
-  background-size: cover;
-  -moz-background-size: cover;
-}
-.background-carousel .bgc-four {
-  background: url("/bundles/hyperrealacacia/img/background-slide-4.jpg");
-  background-size: cover;
-  -moz-background-size: cover;
-}
-.background-carousel .bgc-five {
-  background: url("/bundles/hyperrealacacia/img/background-slide-5.jpg");
-  background-size: cover;
-  -moz-background-size: cover;
-}
-.background-carousel .bgc-six {
-  background: url("/bundles/hyperrealacacia/img/background-slide-6.jpg");
-  background-size: cover;
-  -moz-background-size: cover;
-}
-.background-carousel .bgc-seven {
-  background: url("/bundles/hyperrealacacia/img/background-slide-7.jpg");
-  background-size: cover;
-  -moz-background-size: cover;
-}
-.background-carousel .bgc-eight {
-  background: url("/bundles/hyperrealacacia/img/background-slide-8.jpg");
-  background-size: cover;
-  -moz-background-size: cover;
-}
-.background-carousel .bgc-nine {
-  background: url("/bundles/hyperrealacacia/img/background-slide-9.jpg");
-  background-size: cover;
-  -moz-background-size: cover;
-}
-.background-carousel .bgc-ten {
-  background: url("/bundles/hyperrealacacia/img/background-slide-10.jpg");
-  background-size: cover;
-  -moz-background-size: cover;
-}
-.background-carousel .bgc-active.left {
+  height: 150%;
+  bottom: 0;
   left: 0;
-  opacity: 0;
-  z-index: 2;
+  z-index: -1;
 }
