@@ -10,8 +10,7 @@
     {% endstylesheets %}
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     <link href='http://fonts.googleapis.com/css?family=Headland+One&amp;subset=latin-ext' rel='stylesheet' type='text/css'>
-    <script type="text/javascript" src="{{ asset('components/jquery/dist/jquery.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('components/impress.js/js/impress.js') }}"></script>
+    {#<script type="text/javascript" src="{{ asset('components/impress.js/js/impress.js') }}"></script>#}
     <script type="text/javascript" src="{{ asset('bundles/hyperrealacacia/js/background.js') }}"></script>
     {#<link rel="stylesheet" href="{{ asset('components/fancybox/source/jquery.fancybox.css') }}" type="text/css" media="screen" />#}
     <link rel="stylesheet" type="text/css" href="{{ asset('bundles/hyperrealacacia/css/main.min.css') }}" media="screen" />
@@ -26,20 +25,21 @@
 	{% include "::background.html.twig" %}
 {% endif %}
 
-	<div class="container">
-    		<div class="row">
-        		{% if is_granted("ROLE_USER") %}
-            			<aside class="col-md-3 col-lg-3">
-                			{% include "::sidebar.html.twig" %}
-            			</aside>
-        		{% endif %}
+<div class="container">
+	<div class="row">
+		{% if is_granted("ROLE_USER") %}
+			<aside class="col-md-3 col-lg-3">
+				{% include "::sidebar.html.twig" %}
+			</aside>
+		{% endif %}
 
-        		<div class="row{% if is_granted("ROLE_USER") %} col-md-9 col-lg-9{% endif %}">
-            			{% include "::flashes.html.twig" %}
-            			{% block body %}{% endblock %}
-        		</div>
-    		</div>
+
+		<div class="row{% if is_granted("ROLE_USER") %} col-md-9 col-lg-9{% endif %}">
+			{% include "::flashes.html.twig" %}
+			{% block body %}{% endblock %}
+		</div>
 	</div>
+</div>
 
 <hr />
 <div id="footer">
