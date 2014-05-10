@@ -2,6 +2,7 @@
 .item,
 .active {
 	height:100%;
+        position: relative;
 }
 
 .carousel-caption {
@@ -10,11 +11,16 @@
 	border-top-right-radius: 20px;
 	border-bottom-right-radius: 20px;
 	border-bottom-left-radius: 20px;
-	opacity: 0.6;
+	opacity: 0.61;
+}
+.carousel-caption p {
+	font-size: 15px;
+	margin-bottom: 10px;
 }
 
 .carousel-inner {
 	height:100%;
+        position: relative;
 }
 
 .fill {
@@ -22,10 +28,61 @@
 	height:100%;
 	background-position: center;
 	background-size: cover;
+        position: relative;
 }
 .section {
-	margin: 50px 0;
+	margin: 30px 0;
 }
 html, body {
 	height:100%;
+}
+
+.main-text
+{
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+}
+
+.text-center h1 b
+{
+    background-color: #001100;
+    opacity: 0.61;
+    color: #FFF;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.btn-min-block
+{
+    line-height: 26px;
+    font-size: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.btn-clear
+{
+    color: #FFF;
+    opacity: 0.61;
+    background-color: #001100;
+    border-color: #FFF;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.btn-clear:hover
+{
+    color: #000;
+    opacity: 0.61;
+    background-color: #FFF;
 }
