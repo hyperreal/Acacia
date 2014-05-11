@@ -1,5 +1,6 @@
 {% extends '::base.html.twig' %}
 
+
 {% block unlogged_body %}
 
     <div id="myCarousel" class="carousel slide">
@@ -76,18 +77,20 @@
         			<div class="panel-body">
 					<h3>Regulamin serwisu ogłoszeń drobnych i zastrzeżenia prawne</h3>
 
+{% set MENUH='<em><i><span class="step size-18"><i class="icon ion-flask"></i></span> Menu [H]yperreala</i></em>' %}
+
     <ol class="list-group">
-	<li class="list-group-item"><strong>Wszystkie produkty i usługi oferowane w serwisie <em><i><span class="step size-18"><i class="icon ion-flask"></i></span> Menu [H]yperreala</i></em> muszą być całkowicie legalne. Serwis ten nie ma nic wspólnego ze sławnym <em>Silk Road</em>, nie można tutaj dokonywać żadnych transakcji niezgodnych z prawem.</strong></li>
-        <li class="list-group-item"><strong>Za każde ogłoszenie drobne zamieszczone na</strong> <em><i><span class="step size-18"><i class="icon ion-flask"></i></span> Menu [H]yperreala</i></em> <strong>odpowiada wyłącznie ogłoszeniodawca</strong>. Publikacja ogłoszeń odbywa się automatycznie, bez wiedzy i akceptacji serwisu <em><i><span class="step size-18"><i class="icon ion-flask"></i></span> Menu [H]yperreala</i></em>.</li>
-        <li class="list-group-item">Serwery <em><i><span class="step size-18"><i class="icon ion-flask"></i></span> Menu [H]yperreala</i></em> są ulokowane poza terytorium Polski. Jednakże używając ich, podlegasz prawu kraju, w którym fizycznie się znajdujesz.</li>
-        <li class="list-group-item"><em><i><span class="step size-18"><i class="icon ion-flask"></i></span> Menu [H]yperreala</i></em> nie przechowuje logów serwerów, jedyną informacją jaką dysponujemy, jest adres email podany podczas zakładania konta. W przypadku pisemnego żądania organów upoważnionych (prokuratura lub sąd), nie zawahamy się przed podaniem tego adresu.</li>
+	<li class="list-group-item"><strong>Wszystkie produkty i usługi oferowane w serwisie {{ MENUH|raw }} muszą być całkowicie legalne. Serwis ten nie ma nic wspólnego ze sławnym <em>Silk Road</em>, nie można tutaj dokonywać żadnych transakcji niezgodnych z prawem.</strong></li>
+        <li class="list-group-item"><strong>Za każde ogłoszenie drobne zamieszczone na {{ MENUH|raw }} odpowiada wyłącznie ogłoszeniodawca</strong>. Publikacja ogłoszeń odbywa się automatycznie, bez wiedzy i akceptacji serwisu {{ MENUH|raw }}.</li>
+        <li class="list-group-item">Serwery {{ MENUH|raw }} są ulokowane poza terytorium Polski. Jednakże używając ich, podlegasz prawu kraju, w którym fizycznie się znajdujesz.</li>
+        <li class="list-group-item">{{ MENUH|raw }} nie przechowuje logów serwerów, jedyną informacją jaką dysponujemy, jest adres email podany podczas zakładania konta. W przypadku pisemnego żądania organów upoważnionych (prokuratura lub sąd), nie zawahamy się przed podaniem tego adresu.</li>
         <li class="list-group-item">Wszystkie transakcje przeprowadzane są za pomocą Bitcoinów (<span class="step size-18"><i class="icon ionicons ion-social-bitcoin"></i></span> BTC), które zapewniają wysoki poziom anonimowości i nie podlegają instytucjom bankowym.</li>
-        <li class="list-group-item"><em><i><span class="step size-18"><i class="icon ion-flask"></i></span> Menu [H]yperreala</i></em> gwarantuje sobie niepodważalne prawo do usunięcia dowolnego ogłoszenia w dowolnym momencie, bez zwrotu BTC. Zobowiązujemy się jednakże do użycia tego prawa wyłącznie w drastycznych przypadkach.</li>
-        <li class="list-group-item"><em><i><span class="step size-18"><i class="icon ion-flask"></i></span> Menu [H]yperreala</i></em> dokłada wszelkich starań, aby ogłoszenia wyświetlane były 24 godziny na dobę, 365 dni w tygodniu, jednakże nie dajemy na to żadnych gwarancji.</li>
+        <li class="list-group-item">{{ MENUH|raw }} gwarantuje sobie niepodważalne prawo do usunięcia dowolnego ogłoszenia w dowolnym momencie, bez zwrotu BTC. Zobowiązujemy się jednakże do użycia tego prawa wyłącznie w drastycznych przypadkach.</li>
+        <li class="list-group-item">{{ MENUH|raw }} dokłada wszelkich starań, aby ogłoszenia wyświetlane były 24 godziny na dobę, 365 dni w tygodniu, jednakże nie dajemy na to żadnych gwarancji.</li>
         <li class="list-group-item">Serwis przeznaczony jest wyłącznie dla osób pełnoletnich i dojrzałych. Korzystając z niego należy zdawać sobie sprawę z całkowitej odpowiedzialności za swoje czyny i potencjalnego ryzyka. Wszelkie informacje zawarte na łamach naszego serwisu powinny być wykorzystane wyłącznie w celach edukacyjno-naukowych.</li>
-        <li class="list-group-item">Korzystając z serwisu <em><i><span class="step size-18"><i class="icon ion-flask"></i></span> Menu [H]yperreala</i></em>, akceptujesz bez uwag niniejszy regulamin i zobowiązujesz się zapoznawać się regularnie z jego ewentualnymi zmianami. W przypadku braku akceptacji zmian w regulaminie, <strong>natychmiast</strong> skasuj wszystkie zamieszczone przez siebie ogłoszenia i zaprzestań używania serwisu.</li>
-        <li class="list-group-item">Serwis <em><i><span class="step size-18"><i class="icon ion-flask"></i></span> Menu [H]yperreala</i></em> jest przedsięwzięciem niekomercyjnym. Administratorzy serwisu nie czerpią korzyści materialnych lub niematerialnych z tytułu utrzymywania tegoż serwisu. Wszelkie prace wykonywane są nieodpłatnie, niewielki koszt zamieszczania ogłoszeń pokrywa wyłącznie opłaty za serwery i służy automatycznemu utrzymywaniu porządku w serwisie.</li>
-	<li class="list-group-item">Linki, czyli odnośniki umieszczone na stronach <em><i><span class="step size-18"><i class="icon ion-flask"></i></span> Menu [H]yperreala</i></em> do innych witryn internetowych, są dostępne wyłącznie w celu zapewnienia wygody użytkownikom. Opiekunowie serwisu nie maja wpływu na treści publikowane na zewnętrznych serwerach, dlatego nie mogą ponosić odpowiedzialności za umieszczone na nich informacje i dane.</li>
+        <li class="list-group-item">Korzystając z serwisu {{ MENUH|raw }}, akceptujesz bez uwag niniejszy regulamin i zobowiązujesz się zapoznawać się regularnie z jego ewentualnymi zmianami. W przypadku braku akceptacji zmian w regulaminie, <strong>natychmiast</strong> skasuj wszystkie zamieszczone przez siebie ogłoszenia i zaprzestań używania serwisu.</li>
+        <li class="list-group-item">Serwis {{ MENUH|raw }} jest przedsięwzięciem niekomercyjnym. Administratorzy serwisu nie czerpią korzyści materialnych lub niematerialnych z tytułu utrzymywania tegoż serwisu. Wszelkie prace wykonywane są nieodpłatnie, niewielki koszt zamieszczania ogłoszeń pokrywa wyłącznie opłaty za serwery i służy automatycznemu utrzymywaniu porządku w serwisie.</li>
+	<li class="list-group-item">Linki, czyli odnośniki umieszczone na stronach {{ MENUH|raw }} do innych witryn internetowych, są dostępne wyłącznie w celu zapewnienia wygody użytkownikom. Opiekunowie serwisu nie maja wpływu na treści publikowane na zewnętrznych serwerach, dlatego nie mogą ponosić odpowiedzialności za umieszczone na nich informacje i dane.</li>
         <li class="list-group-item">Przyjmujesz do wiadomości, że używamy cookies.</li>
         <li class="list-group-item"><strong>Najważniejszy dla nas jest zadowolony klient.</strong> Jeśli masz jakiekolwiek uwagi, napisz do nas niezwłocznie: <a class="mail-link" href="mailto:menu@hyperreal.biz">menu@hyperreal.biz</a>.</li>
     </ol>
