@@ -27,6 +27,8 @@ Log in into your vagrant virtual machine via `vagrant ssh` and:
 cd /var/www/acacia && grunt watch
 ```
 
+Please be aware it actively and continiusly scans directories with less files, creating some virtual machine load. Remember to switch it off when you are not developing for a longer period.
+
 
 
 [1]: http://vagrantup.com/
