@@ -7360,6 +7360,15 @@ Background image.
   left: 0;
   z-index: -1;
 }
+body {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
+}
+body select,
+body input,
+body textarea {
+  color: black;
+}
 .carousel,
 .item,
 .active {
