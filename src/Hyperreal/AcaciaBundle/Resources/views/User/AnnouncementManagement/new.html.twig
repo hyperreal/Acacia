@@ -4,6 +4,12 @@
 
 {% block body %}
 
-{{ form_widget(form) }}
+<form action="{{ url('acacia_user_announcement_management_save') }}" method="post">
+
+    {{ form_widget(form) }}
+    <input type="submit" value="{{ 'commons.save'|babel }}" />
+
+</form>
+
 
 {% endblock %}

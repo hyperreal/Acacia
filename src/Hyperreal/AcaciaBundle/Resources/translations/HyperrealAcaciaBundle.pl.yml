@@ -1,6 +1,7 @@
 promo:
     github: Pomóż nam na githubie!
     poweredby: "Strona wspierana przez Akację - serwer ogłoszeń drobnych [H]yperreala"
+
 meta:
     title:
         suffix: "Menu [H]yperreala"
@@ -16,3 +17,18 @@ navbar:
     login-info: Witaj, %user%!
     navigation-toggle: Pokaż/ukryj nawigację
 
+announcement:
+    management:
+        add:
+            success: Dodano pomyślnie
+            errors: Są błędy
+
+commons:
+    edit: Edytuj
+    save: Zapisz
+
+tables:
+    head:
+        id: ID
+        title: Tytuł
+        actions: Akcje

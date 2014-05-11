@@ -17,8 +17,18 @@ class AnnouncementRepository extends EntityRepository
             ->getQuery();
     }
 
-    public function getUserAnnouncements(User $user)
+    public function getUserAnnouncements(User $user, $offset, $limit)
     {
-        return array();
+        $q = $this->getEntityManager()->createQueryBuilder()
+            ->select('a')
+            ->from('HyperrealAcaciaBundle:Announcement', 'a')
+            ->where('a.user = ?1')
+            ->orderBy('a.creationDate', 'DESC')
+            ->setFirstResult($offset)
+            ->setMaxResults($limit)
+            ->setParameter(1, $user)
+            ->getQuery();
+
+        return $q->getResult();
     }
-} 
+}

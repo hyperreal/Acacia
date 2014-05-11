@@ -2,18 +2,17 @@
 
 namespace Hyperreal\AcaciaBundle\Controller\User;
 
+use Hyperreal\AcaciaBundle\Controller\AcaciaController;
 use Hyperreal\AcaciaBundle\Entity\Announcement;
 use Hyperreal\AcaciaBundle\Form\AddAnnouncementFormType;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 
-class AnnouncementManagementController extends Controller
+class AnnouncementManagementController extends AcaciaController
 {
     /**
      * @Route("/", name="acacia_user_announcement_management_index")
@@ -28,7 +27,7 @@ class AnnouncementManagementController extends Controller
 
         $announcements = $this->get('doctrine.orm.entity_manager')
             ->getRepository('HyperrealAcaciaBundle:Announcement')
-            ->getUserAnnouncements($user);
+            ->getUserAnnouncements($user, 0, 20);
 
         return array(
             'announcements' => $announcements
@@ -36,7 +35,7 @@ class AnnouncementManagementController extends Controller
     }
 
     /**
-     * @Route("/add", name="acacia_user_announcement_management_new")
+     * @Route("/new", name="acacia_user_announcement_management_new")
      * @Method("GET")
      * @Security("has_role('ROLE_USER')")
      * @Template()
@@ -67,14 +66,31 @@ class AnnouncementManagementController extends Controller
             $this->get('doctrine.orm.entity_manager')->persist($announcement);
             $this->get('doctrine.orm.entity_manager')->flush();
 
-            $this->get('session')->getFlashBag()->add('costam', 'jest ok');
+            $this->get('session')->getFlashBag()->add('success', $this->trans('announcement.management.add.success'));
+
             return new RedirectResponse($this->generateUrl('acacia_user_announcement_management_index'));
         }
+
+        $this->get('session')->getFlashBag()->add('notice', $this->trans('announcement.management.add.errors'));
 
         return array(
             'form' => $form->createView(),
         );
     }
 
+    /**
+     * @Route("/edit/{announcement}", name="acacia_user_announcement_management_edit")
+     * @Method("GET")
+     * @Security("has_role('ROLE_USER')")
+     * @Template()
+     */
+    public function editAction(Announcement $announcement)
+    {
+        $form = $this->createForm(new AddAnnouncementFormType(), $announcement);
 
+        return array(
+            'announcement' => $announcement,
+            'form' => $form->createView(),
+        );
+    }
 }

@@ -4,7 +4,28 @@
 
 {% block body %}
 
-    cze
+    <table class="user-announcements">
+    <thead>
+    <tr>
+        <th>{{ 'tables.head.id'|babel }}</th>
+        <th>{{ 'tables.head.title'|babel }}</th>
+        <th>{{ 'tables.head.actions'|babel }}</th>
+    </tr>
+    </thead>
+
+    {% for announcement in announcements %}
+        <tr>
+            <td>{{ announcement.id }}</td>
+            <td>{{ announcement.title }}</td>
+            <td>
+                <a href="{{ url('acacia_user_announcement_management_edit', {'announcement': announcement.id}) }}">
+                    {{ 'commons.edit'|babel }}
+                </a>
+            </td>
+        </tr>
+    {% endfor %}
+
+    </table>
 
 {% endblock %}
 
