@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  * @ORM\Table(name="orders")
  */
-class Order 
+class Order
 {
 
     /**
@@ -19,7 +19,7 @@ class Order
     private $id;
 
     /**
-     * @ORM\ManyToOne(inversedBy="orders", targetEntity="Order")
+     * @ORM\ManyToOne(inversedBy="orders", targetEntity="User")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id", nullable=false)
      */
     private $user;
@@ -36,4 +36,4 @@ class Order
     }
 
 
-} 
+}

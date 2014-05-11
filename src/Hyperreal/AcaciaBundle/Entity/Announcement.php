@@ -45,7 +45,7 @@ class Announcement
     private $creationDate;
 
     /**
-     * @ORM\Column(name="last_modification_date", type="datetime")
+     * @ORM\Column(name="last_modification_date", type="datetime", nullable=true)
      * @var \DateTime
      */
     private $lastModificationDate;
@@ -65,12 +65,12 @@ class Announcement
     /**
      * @ORM\Column(name="payment_status", type="integer")
      */
-    private $paymentStatus;
+    private $paymentStatus = 0;
 
     /**
      * @ORM\Column(name="type", type="integer")
      */
-    private $type;
+    private $type = self::TYPE_STANDARD;
 
     /**
      * @var Thread
@@ -79,9 +79,19 @@ class Announcement
     private $thread;
 
     /**
+     * @ORM\OneToMany(targetEntity="Order", mappedBy="announcement", cascade={"persist", "remove"})
+     */
+    protected $orders;
+
+    /**
      * one to many with payments
      */
     private $payments;
+
+    public function __construct()
+    {
+        $this->creationDate = new \DateTime();
+    }
 
     /**
      * @return Thread
