@@ -1,0 +1,9 @@
+{% form_theme form "HyperrealAcaciaBundle::acaciaFormTheme.html.twig" %}
+
+<form action="{{ path('fos_user_profile_edit') }}" {{ form_enctype(form) }} method="POST" class="form-horizontal col-lg-12" role="form">
+    {{ form_widget(form) }}
+    <div class="form-actions">
+        <a href="{{ path('fos_user_change_password') }}" class="btn btn-link">{{ 'change_password.submit'|trans({}, 'FOSUserBundle') }}</a>
+        <input type="submit" value="{{ 'profile.edit.submit'|trans({}, 'FOSUserBundle') }}" class="btn btn-primary pull-right" />
+    </div>
+</form>

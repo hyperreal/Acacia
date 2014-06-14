@@ -27,6 +27,17 @@ commons:
     edit: Edytuj
     save: Zapisz
 
+security:
+    login-form:
+        username: Login
+        password: Hasło
+        submit: Zaloguj się
+        page-title: Zaloguj się do Menu!
+        html-title: Zaloguj się do Menu!
+        register: Rejestracja
+        resetting: Zapomniałem hasła
+
+
 tables:
     head:
         id: ID
