@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "d243da99f13e04792fd6cc79bbebc56c",
+    "hash": "8b0d28a2a2dab210c82dd9e9bfecac5d",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1677,6 +1677,52 @@
             "time": "2013-08-21 18:09:35"
         },
         {
+            "name": "stephanecollot/datetimepicker-bundle",
+            "version": "dev-master",
+            "target-dir": "SC/DatetimepickerBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stephanecollot/DatetimepickerBundle.git",
+                "reference": "7c5bc619344c9f77debf54643057e79557ed8f9a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/stephanecollot/DatetimepickerBundle/zipball/7c5bc619344c9f77debf54643057e79557ed8f9a",
+                "reference": "7c5bc619344c9f77debf54643057e79557ed8f9a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3",
+                "symfony/framework-bundle": "2.*",
+                "symfony/symfony": "2.*"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-0": {
+                    "SC\\DatetimepickerBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Stephane Collot"
+                }
+            ],
+            "description": "Symfony bundle for Bootstrap DateTime picker",
+            "keywords": [
+                "bootstrap",
+                "bundle",
+                "datepicker",
+                "picker",
+                "symfony",
+                "timepicker"
+            ],
+            "time": "2014-04-22 08:19:19"
+        },
+        {
             "name": "swiftmailer/swiftmailer",
             "version": "v5.1.0",
             "source": {
@@ -2278,7 +2324,8 @@
     "stability-flags": {
         "friendsofsymfony/user-bundle": 20,
         "friendsofsymfony/comment-bundle": 20,
-        "jms/payment-core-bundle": 20
+        "jms/payment-core-bundle": 20,
+        "stephanecollot/datetimepicker-bundle": 20
     },
     "platform": {
         "php": ">=5.3.3"

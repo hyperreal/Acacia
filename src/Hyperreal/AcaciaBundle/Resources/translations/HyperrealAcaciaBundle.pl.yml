@@ -37,7 +37,6 @@ security:
         register: Rejestracja
         resetting: Zapomniałem hasła
 
-
 tables:
     head:
         id: ID

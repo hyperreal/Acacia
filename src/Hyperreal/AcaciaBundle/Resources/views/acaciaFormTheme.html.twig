@@ -18,7 +18,11 @@
                 {% set label_attr = label_attr|merge({'class': (label_attr.class|default('col-lg-3 control-label') ~ ' required')|trim}) %}
             {% endif %}
             {% if label is empty %}
-                {% set label = form.name|humanize %}
+                {% if "name" in form %}
+                    {% set label = form.name|humanize %}#}
+                {% else %}
+                    {% set label = form.vars.name|humanize %}
+                {% endif %}
             {% endif %}
             <label{% for attrname, attrvalue in label_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}>{{ label|trans({}, translation_domain)|raw }}</label>
         {% endif %}

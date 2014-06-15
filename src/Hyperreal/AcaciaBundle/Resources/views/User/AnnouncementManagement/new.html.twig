@@ -2,14 +2,19 @@
 
 {% block title %}{{ 'user.announcement.management.new.title'|babel }}{% endblock %}
 
+{% block stylesheets %}
+    {{ form_stylesheet(form) }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ form_javascript(form) }}
+{% endblock %}
+
 {% block body %}
+    <form action="{{ url('acacia_user_announcement_management_save') }}" method="post">
 
-<form action="{{ url('acacia_user_announcement_management_save') }}" method="post">
+        {{ form_widget(form) }}
+        <input type="submit" value="{{ 'commons.save'|babel }}" />
 
-    {{ form_widget(form) }}
-    <input type="submit" value="{{ 'commons.save'|babel }}" />
-
-</form>
-
-
+    </form>
 {% endblock %}

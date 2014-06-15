@@ -24,6 +24,9 @@ framework:
     fragments:       ~
     http_method_override: true
 
+sc_datetimepicker:
+    picker: ~
+
 fos_comment:
     db_driver: orm
     class:

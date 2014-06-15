@@ -7348,6 +7348,9 @@ ul.no-buttons {
   content: "\e080";
   /* adjust as needed, taken from bootstrap.css */
 }
+.datetimepicker {
+  color: #000;
+}
 /*
 Background image.
 */

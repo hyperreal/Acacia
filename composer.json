@@ -21,7 +21,8 @@
         "incenteev/composer-parameter-handler": "~2.0",
         "friendsofsymfony/user-bundle": "2.0.x-dev",
         "friendsofsymfony/comment-bundle": "2.0.x-dev",
-        "jms/payment-core-bundle": "dev-master"
+        "jms/payment-core-bundle": "dev-master",
+        "stephanecollot/datetimepicker-bundle": "dev-master"
     },
     "scripts": {
         "post-install-cmd": [
