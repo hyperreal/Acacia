@@ -42,7 +42,7 @@ class AnnouncementManagementController extends AcaciaController
      */
     public function newAction()
     {
-        $form = $this->createForm(new AddAnnouncementFormType(), new Announcement());
+        $form = $this->createForm($this->get('acacia.form.add_announcement'), new Announcement());
 
         return array(
             'form' => $form->createView(),

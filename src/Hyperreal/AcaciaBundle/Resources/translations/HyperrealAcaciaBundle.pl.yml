@@ -23,6 +23,14 @@ announcement:
             success: Dodano pomyślnie
             errors: Są błędy
 
+forms:
+    announcement-management:
+        new:
+            title: Tytuł
+            start-date: Od
+            end-date: Do
+            content: Treść
+
 commons:
     edit: Edytuj
     save: Zapisz

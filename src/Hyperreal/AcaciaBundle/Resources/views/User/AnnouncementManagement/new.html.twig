@@ -10,11 +10,17 @@
     {{ form_javascript(form) }}
 {% endblock %}
 
+{% form_theme form "HyperrealAcaciaBundle::acaciaHorizontalFormTheme.html.twig" %}
+
 {% block body %}
-    <form action="{{ url('acacia_user_announcement_management_save') }}" method="post">
+    <form action="{{ url('acacia_user_announcement_management_save') }}" method="post" class="form-horizontal">
 
         {{ form_widget(form) }}
-        <input type="submit" value="{{ 'commons.save'|babel }}" />
 
+        <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-10">
+                <input type="submit" value="{{ 'commons.save'|babel }}" class="btn btn-primary" />
+            </div>
+        </div>
     </form>
 {% endblock %}

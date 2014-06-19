@@ -11,6 +11,8 @@ parameters:
     mailer_user:       ~
     mailer_password:   ~
 
+    # check whether in vendor/stephanecollor/datetimepicker-bundle/SC/DatetimepickerBundle/Resources/public/js/locales
+    # exists file matching this locale
     locale:            en
     secret:            ThisTokenIsNotSoSecretChangeIt
 
