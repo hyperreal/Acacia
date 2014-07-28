@@ -1,0 +1,26 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}{{ 'user.announcement.management.edit.title'|babel }}{% endblock %}
+
+{% block stylesheets %}
+    {{ form_stylesheet(form) }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ form_javascript(form) }}
+{% endblock %}
+
+{% form_theme form "HyperrealAcaciaBundle::acaciaHorizontalFormTheme.html.twig" %}
+
+{% block body %}
+    <form action="{{ url('acacia_user_announcement_management_update', {announcement: announcement.id}) }}" method="post" class="form-horizontal">
+
+        {{ form_widget(form) }}
+
+        <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-10">
+                <input type="submit" value="{{ 'commons.save'|babel }}" class="btn btn-primary" />
+            </div>
+        </div>
+    </form>
+{% endblock %}

@@ -59,7 +59,7 @@ class AnnouncementManagementController extends AcaciaController
     {
         $announcement = new Announcement();
         $announcement->setUser($this->getUser());
-        $form = $this->createForm(new AddAnnouncementFormType(), $announcement);
+        $form = $this->createForm($this->get('acacia.form.add_announcement'), $announcement);
         $form->submit($request);
 
         if ($form->isValid()) {
@@ -86,10 +86,44 @@ class AnnouncementManagementController extends AcaciaController
      */
     public function editAction(Announcement $announcement)
     {
-        $form = $this->createForm(new AddAnnouncementFormType(), $announcement);
+        $form = $this->createForm($this->get('acacia.form.edit_announcement'), $announcement);
 
         return array(
             'announcement' => $announcement,
+            'form' => $form->createView(),
+        );
+    }
+
+    /**
+     * @Route("/update/{announcement}", name="acacia_user_announcement_management_update")
+     * @Method("POST")
+     * @Security("has_role('ROLE_USER')")
+     * @Template("HyperrealAcaciaBundle:User:AnnouncementManagement/edit.html.twig")
+     */
+    public function updateAction(Announcement $announcement, Request $request)
+    {
+        $announcement->setUser($this->getUser());
+        $form = $this->createForm($this->get('acacia.form.edit_announcement'), $announcement);
+        $form->submit($request);
+
+        if ($form->isValid()) {
+            $this->get('doctrine.orm.entity_manager')->persist($announcement);
+            $this->get('doctrine.orm.entity_manager')->flush();
+
+            $this->get('session')->getFlashBag()->add(
+                'success',
+                $this->trans('announcement.management.edit.success', array('%title%' => $announcement->getTitle()))
+            );
+
+            return new RedirectResponse($this->generateUrl('acacia_user_announcement_management_index'));
+        }
+
+        $this->get('session')->getFlashBag()->add(
+            'notice',
+            $this->trans('announcement.management.edit.errors', array('%title%' => $announcement->getTitle()))
+        );
+
+        return array(
             'form' => $form->createView(),
         );
     }

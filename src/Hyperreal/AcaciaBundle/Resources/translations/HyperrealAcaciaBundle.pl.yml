@@ -21,7 +21,10 @@ announcement:
     management:
         add:
             success: Dodano pomyślnie
-            errors: Są błędy
+            errors: Podczas dodawania ogłoszenia wystąpił błąd. Spróbuj ponownie.
+        edit:
+            success: Pomyślnie zmieniono ogłoszenie "%title%"
+            errors: Wystąpiły błędy podczas edycji ogłoszenia "%title%". Spróbuj ponownie.
 
 forms:
     announcement-management:

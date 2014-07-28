@@ -39,13 +39,6 @@ class OwnerOnlyEventSubscriber implements EventSubscriberInterface
         $method = new \ReflectionMethod($event->getRequest()->get('_controller'));
         $annotation = $this->annotationReader->getMethodAnnotation($method, 'OwnerOnly');
 
-        var_dump($annotation);
-        die();
-
-
-
-
-
         return $this->securityContext->isGranted('a', null);
     }
 }

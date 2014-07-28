@@ -11,6 +11,7 @@
         <parameter key="acacia.configuration.parser_provider.class">Hyperreal\AcaciaBundle\Internals\Configuration\YamlConfigurationParserProvider</parameter>
         <parameter key="acacia.events.role_based_controller_setter.class">Hyperreal\AcaciaBundle\Internals\Security\RoleBasedControllerSetterEventSubscriber</parameter>
         <parameter key="acacia.form.add_announcement.class">Hyperreal\AcaciaBundle\Form\AddAnnouncementFormType</parameter>
+        <parameter key="acacia.form.edit_announcement.class">Hyperreal\AcaciaBundle\Form\EditAnnouncementFormType</parameter>
     </parameters>
 
     <services>
@@ -38,6 +39,11 @@
         <service id="acacia.form.add_announcement" class="%acacia.form.add_announcement.class%">
             <argument>%locale%</argument>
             <tag name="form.type" alias="acacia.add_announcement" />
+        </service>
+
+        <service id="acacia.form.edit_announcement" class="%acacia.form.edit_announcement.class%">
+            <argument>%locale%</argument>
+            <tag name="form.type" alias="acacia.edit_announcement" />
         </service>
 
     </services>
